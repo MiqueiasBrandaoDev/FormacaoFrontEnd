@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    padding: 0;
+    padding: 15px;
     font-family: Verdana;
 }
 
@@ -13,7 +13,6 @@ main #alert{
     text-align: center;
     font-size: 20px;
     animation: piscar 1s infinite;
-    position: fixed;
 }
 
 @keyframes piscar {
