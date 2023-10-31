@@ -14,7 +14,7 @@ console.clear()
 
 
 //condicionais com switch
-switch ("Médico") {
+switch ("Programador") {
     case "Programador":
         console.log("Sua profissão é: Programador")        
         break;
