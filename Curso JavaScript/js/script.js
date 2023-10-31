@@ -45,20 +45,10 @@ window.onload = function() {
         // Salva o valor no localStorage
         localStorage.setItem("opcaoSelecionada", selecinado);
 
-        //exclui o elemento anterior
-        let existElement = document.querySelector(".dynamic-script")
-        if(existElement){
-            existElement.classList.remove("dynamic-script")
-            existElement.remove()
-        }
-
         //insere o novo elemento
         let newScript = document.createElement('script')
         newScript.setAttribute('src', `js/${selecinado}.js`)
         document.querySelector("body").appendChild(newScript)   
-
-        //limpar console.log
         console.clear();
-
     }
   };
