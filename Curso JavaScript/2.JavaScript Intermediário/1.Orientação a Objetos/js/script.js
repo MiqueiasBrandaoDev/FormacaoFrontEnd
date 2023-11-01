@@ -1,45 +1,67 @@
-//CRIANDO MÉTODOS
-let pessoa = {
-    cumprimento: function(){
-        return "Olá, bom dia"
-    },
-    despedida: function(){
-        return "Estou de saída, Tchau!"
-    }
-}
-console.log(pessoa.cumprimento())
-console.log(pessoa.despedida())
+class Paciente{
 
-
-//APROFUNDANDO MÉTODOS
-console.clear() //limpando console para melhor entendimento
-let carro = {
-
-    model: "",
-
-    setModel: function(newModel){
-        this.model = newModel
-    },
-
-    getModel: function(){
-        return this.model
+    //ATRIBUTOS
+    constructor(nome, codigo, planoSaude){
+        this.nome = nome
+        this.codigo = codigo
+        this.planoSaude = planoSaude
     }
 
+    //MÉTODOS
+    getPacient(){
+        let dados = { 
+            "nome": this.nome,
+            "plano de Saude": this.planoSaude,
+            "codigo": this.codigo
+        }
+        return dados
+    }
+
+    updatePacientName(nome){
+
+        if(nome != undefined){
+            this.nome = nome
+        }
+        else{
+            console.error("Informe o nome como parâmetro")
+        }
+
+    }
+
+    updatePacientCodigo(codigo){
+
+        if(codigo != undefined){
+            this.codigo = codigo
+        }
+        else{
+            console.error("Informe o codigo como parâmetro")
+        }
+
+    }
+
+    updatePacientPlano(planoSaude){
+
+        if(planoSaude != undefined){
+            this.planoSaude = planoSaude
+        }
+        else{
+            console.error("Informe o plano de Saude como parâmetro")
+        }
+
+    }
+
 }
-carro.setModel("Modelo Teste")
-console.log(carro.getModel())
 
+//instanciando a class com os valores
+let newName = new Paciente("Maria", 123, "Unimed")
+newName.getPacient()
+console.log("Objeto Antes da Alteração:")
+console.log(newName.getPacient())
 
-//FUNÇÕES COM CLASSE
+newName.updatePacientName("Maria das Dores")//alterando um dado [nome] da class
+newName.updatePacientPlano("América")//alterando dado  [plano] da class
+newName.updatePacientCodigo(87123976)//alterando dado  [codigo] da class
 
-//FUNÇÃO CONSTRUTORA
-function criarCachorro(name, cor, raça){
-    const cachorro = Object.create({})
-    cachorro.name = name
-    cachorro.cor = cor
-    cachorro.raça = raça
-    return cachorro
-}
-
-let bob = criarCachorro("bob", "preto", "pit")
-console.log(bob)
+//exibindo o objeto atual com as alterações
+console.log("Objeto abaixo alterado:")
+console.log(newName.getPacient())
