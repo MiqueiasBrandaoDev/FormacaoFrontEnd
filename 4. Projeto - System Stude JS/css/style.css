@@ -2,6 +2,7 @@
     margin: 0;
     padding: 15px;
     font-family: Verdana;
+    background-color: #666;
 }
 
 main #alert{
@@ -30,4 +31,8 @@ main #alert{
 
 .hide{
     display: none;
+}
+
+form, label, select{
+  background-color: #bababa;
 }
