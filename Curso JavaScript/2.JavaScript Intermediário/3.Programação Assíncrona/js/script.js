@@ -16,16 +16,6 @@ const somar = Promise.resolve(
 )
 
 .then((value) => {
-    if(Number.isNaN(value)){
-        throw new Error("Erro no tipo do conteúdo");
-    }
-    else{
-        console.log("número válido")
-        return value
-    }
-})
-
-.then((value) => {
     console.log(`A soma é ${value}`)
 })
 
@@ -34,4 +24,32 @@ const somar = Promise.resolve(
     console.log(`O resultado menos 1 é ${valorFinal}`)
 })
 
-.catch((err) => console.log(`Houve algum erro: ${err}`))
+.catch((err) => console.log(`Houve algum erro: ${err}`)) 
+
+function validarMedia(n) {
+    return new Promise((resolve, reject) => {
+        if(n > 6){
+            resolve(`Parabens, você foi aprovado. Sua média é ${n}`)
+        }
+        else{
+            reject(`Você foi reprovado. Sua média é ${n}`)
+        }
+    }).then((value) => { 
+        document.write(value)
+    }).catch((err) => {
+        document.write(err)
+    })
+}
+
+validarMedia(10)
+
+//async functions
+async function somar(a, b){
+    await setTimeout(() => {
+        const result = a + b
+        return result
+    }, 3000);
+}
+
+somar(10, 20).then((data) => { console.log(`resultado : ` + data) })
+console.log("Fora do async")
