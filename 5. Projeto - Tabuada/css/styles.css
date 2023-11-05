@@ -83,6 +83,12 @@ table td{
     padding: 7px 50px;
     border-radius: 5px;
     border: 1px solid #999;
+    cursor: pointer;
+}
+
+table td:hover{
+    background-color: #333;
+    color: #fff;
 }
 
 .hide{
