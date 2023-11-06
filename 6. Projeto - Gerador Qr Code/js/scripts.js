@@ -1,20 +1,40 @@
+//capturando click do botão
 document.querySelector(".btn").addEventListener("click", (e) => {
     e.preventDefault()
 
-    fetch("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=google.com")
-    .then(response => {
+    if(!document.querySelector("#input-url").value == ""){
 
-        console.log(response.url)
-
-        if(response.status == 200){
-            console.log("Requisição concluída com sucesso")
+        //apresentando na card do QR Code
+        document.querySelector(".image-qr").classList.add("hide")
+        document.querySelector(".spinner-border").classList.remove("hide")
         
-            const url = response.url 
-            document.querySelector(".image-qr").setAttribute("src", `${url}`)
+        document.querySelector(".card-image").classList.remove("hide")        
+        document.querySelector(".spinner-border").classList.remove("hide")        
+
+        fetch(`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${document.querySelector("#input-url").value}`)
+        .then(response => {
+
+            console.log(response.url)
+
+            if(response.status == 200){
             
+                //inserindo link do QR gerado no html
+                document.querySelector(".image-qr").setAttribute("src", `${response.url}`)
+                
+                //apresentando na tela o QR Code
+                document.querySelector(".image-qr").classList.remove("hide")
+                document.querySelector(".spinner-border").classList.add("hide")
 
-        }
+            }
 
-    })
+        })
+
+    }
+    else{
+        console.log("Input Vazio")
+        document.querySelector("#input-url").setAttribute("style", "border: red solid 2px")
+        document.querySelector("#input-url").setAttribute("placeholder", "Preencha este campo")
+        document.querySelector(".card-image").classList.add("hide")
+    }
 
 })

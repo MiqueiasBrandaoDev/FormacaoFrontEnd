@@ -16,7 +16,7 @@ main{
 .card{
     background-color: #fff;
     width: 500px;
-    margin: 7% auto;
+    margin: 2% auto;
     padding:  15px;
     border-radius: 20px;
 }
@@ -71,4 +71,33 @@ form input[type="submit"]:hover{
 
 .hide{
     display: none;
+}
+
+#footer{
+    text-align: center;
+    align-content: center;
+    color: #ffffffba;
+    margin-top: 20px;
+    font-size: 15px;
+    border: solid 1px #ffffffba;
+    width: 45%;
+    transition: .5s;
+    width: 500px;
+    margin: 2% auto;
+    padding:  15px;
+    border-radius: 20px;
+}
+
+svg{
+    width: 100%;
+}
+
+#footer:hover{
+    background-color: aliceblue;
+    color: black;
+    transition: .5s;
+}
+
+a{
+    text-decoration: none;
 }
