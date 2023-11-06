@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+}
+
+body{
+    background-color: #333;
+}
+
+main{
+    width: 80%;
+    margin: auto;
+}
+
+.card{
+    background-color: #fff;
+    width: 500px;
+    margin: 7% auto;
+    padding:  15px;
+    border-radius: 20px;
+}
+
+.card h3{
+    font-size: 30px;
+    text-align: center;
+    margin: 15px auto;
+}
+
+.card p{
+    font-size: 15px;
+    text-align: center;
+    margin: 15px auto;
+}
+
+form input[type="text"]{
+    margin: 25px auto;
+    width: 80%;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+}
+
+form input[type="submit"]{
+    margin: 30px auto;
+    width: 90%;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    border: none;
+    background-color: rgb(7, 189, 68);
+    font-size: 25px;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+form input[type="submit"]:hover{
+    background-color: #333;
+    color: #fff;
+}
+
+.card-image{
+    border: 1px solid #333;
+    border-style: dashed;
+    padding: 50px 15px;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.hide{
+    display: none;
+}
