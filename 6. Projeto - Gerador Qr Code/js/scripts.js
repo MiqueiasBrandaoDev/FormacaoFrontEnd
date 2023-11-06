@@ -14,8 +14,6 @@ document.querySelector(".btn").addEventListener("click", (e) => {
         fetch(`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${document.querySelector("#input-url").value}`)
         .then(response => {
 
-            console.log(response.url)
-
             if(response.status == 200){
             
                 //inserindo link do QR gerado no html
