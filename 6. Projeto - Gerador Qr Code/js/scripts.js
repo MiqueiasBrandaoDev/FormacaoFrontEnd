@@ -34,5 +34,4 @@ document.querySelector(".btn").addEventListener("click", (e) => {
         document.querySelector("#input-url").setAttribute("placeholder", "Preencha este campo")
         document.querySelector(".card-image").classList.add("hide")
     }
-
 })
